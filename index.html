@@ -73,13 +73,34 @@
                 document.getElementById('lcd').value = '';
                 pantalla = '';
             }
+             function calcular() {
+                numero2 = document.getElementById('lcd').value;
+                switch (operador) {
+                    case 'suma':
+                        resultado = parseInt(numero1) + parseInt(numero2);
+                        document.getElementById('lcd').value = resultado;
+                        break;
+                    case 'resta':
+                        resultado = numero1 - numero2;
+                        document.getElementById('lcd').value = resultado;
+                        break;
+                    case 'multiplicar':
+                        resultado = numero1 * numero2;
+                        document.getElementById('lcd').value = resultado;
+                    case 'dividir':
+                        resultado = numero2 / numero2;
+                        document.getElementById('lcd').value = resultado;
+                        break;
+                }
+            }
+
             function borar() {
                 document.getElementById('lcd').value = '';
                 numero2 = 0;
                 numero1 = 0;
                 resultado = 0;
                 operador = 0;
-                pantalla = 0;
+                pantaldla = 0;
             }
         </script>
 </body>
