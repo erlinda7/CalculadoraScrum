@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <table BORDER>
+        <tr>
+            <th colspan="4"><input id="lcd" type="text"></th>
+        </tr>
+        <tr>
+            <th><button onclick="mostrar(7)">7</button></th>
+            <th><button onclick="mostrar(8)">8</button></th>
+            <th><button onclick="mostrar(9)">9</button></th>
+            <th><button onclick="obtenerOperador('suma')">+</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="mostrar(4)">4</button></th>
+            <th><button onclick="mostrar(5)">5</button></th>
+            <th><button onclick="mostrar(6)">6</button></th>
+            <th><button onclick="obtenerOperador('resta')">-</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="mostrar(1)">1</button></th>
+            <th><button onclick="mostrar(2)">2</button></th>
+            <th><button onclick="mostrar(3)">3</button></th>
+            <th><button onclick="obtenerOperador('multiplicar')">*</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="borar()">ce</button></th>
+            <th><button onclick="mostrar('0')">0</button></th>
+            <th><button onclick="calcular()">=</button></th>
+            <th><button onclick="obtenerOperador('division')">/</button></th>
+        </tr>
+    </table>
+<div>
+        <img src="img/Kagerou.Project.jpg.jpeg" alt="">
+        <div style="background-color: red;">
+            hello World
+            <a href="index.html">menu de contenido</a>
+            <form action="index.html" method="POST">
+                Nombre<input type="text" name="nombre"><br>
+                Apellido<input type="text" name="apellido"><br>
+                <select name="sexo" id="sexo">
+                    <option value="masculino">masculino</option>
+                    <option value="femenino">femenino</option>
+                </select>
+
+                <br>
+
+                Reclamo<input type="radio" value="m" name="otro">
+                Contacto<input type="radio" type="radio" name="otro">
+                <br>
+                <button>Enviar Formulario</button>
+            </form>
+</div>
+        <script>
+            var pantalla = '';
+            var resultado = 0;
+            var operador = '';
+            var numero1 = 0;
+            var numero2 = 0;
+            function mostrar(valor) {
+                pantalla = pantalla + valor;
+                document.getElementById('lcd').value = pantalla;
+            }
+            function obtenerOperador(operacion) {
+                numero1 = document.getElementById('lcd').value;
+                operador = operacion;
+                document.getElementById('lcd').value = '';
+                pantalla = '';
+            }
+            function borar() {
+                document.getElementById('lcd').value = '';
+                numero2 = 0;
+                numero1 = 0;
+                resultado = 0;
+                operador = 0;
+                pantalla = 0;
+            }
+        </script>
+</body>
+</html>
